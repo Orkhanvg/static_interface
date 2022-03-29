@@ -1,61 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1.Models
 {
-    class Class1:IAccount
+    class Class1 : IAccount
     {
         public int ID
         {
-            get
-            {
-                { return ID; }
-
-
-            }
-            set
-            {
-                { ID = value; }
-
-            }
-        }
-
-
-        public string Fullname
-        {
-            get
-            {
-                { return Fullname; }
-
-
-            }
-            set
-            {
-                { Fullname = value; }
-
-            }
-
+            get;
 
 
         }
-        public string Email
-        
-        {
-            get
-            {
-                { return Email; }
 
 
-            }
-            set
-            {
-                { Email = value; }
-
-            }
-        }
+        public string Fullname { get; set; }
+        public string Email { get; set; }
         private string _password;
         public string Password
         {
@@ -77,20 +35,22 @@ namespace ConsoleApp1.Models
 
 
             }
+            
 
         }
-        
 
-        public  void ShowInfo()
+
+        public void ShowInfo()
         {
-            Console.WriteLine($"ID: {ID}"+/n);
-            Console.WriteLine($"fullname: {Fullname}");
-            Console.WriteLine($"Email: {Email}");
+            Console.WriteLine($"ID: {ID}\n" +
+                $"fullname: {Fullname}\n" +
+                $"Email: {Email}");
+
         }
 
         public bool PasswordChecker(string password)
         {
-           
+
             bool result = false;
             bool result1 = false;
             bool result2 = false;
@@ -118,4 +78,12 @@ namespace ConsoleApp1.Models
             return result;
         }
     }
+    interface IAccount
+    {
+        public bool PasswordChecker(string password);
+
+        public void ShowInfo();
+
+    }
+
 }
