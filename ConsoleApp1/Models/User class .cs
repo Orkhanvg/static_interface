@@ -4,6 +4,7 @@ namespace ConsoleApp1.Models
 {
     class Class1 : IAccount
     {
+        private static int _id;
         public int ID
         {
             get;
@@ -16,11 +17,7 @@ namespace ConsoleApp1.Models
         public string Email { get; set; }
         private string _password;
 
-        public Class1(string email, string password)
-        {
-            Email = email;
-            Password = password;
-        }
+       
 
         public string Password
         {
@@ -45,7 +42,14 @@ namespace ConsoleApp1.Models
             
 
         }
+        public Class1(string email, string password)
+        {
+            Email = email;
+            Password = password;
+            _id++;
+            ID = _id;
 
+        }
 
         public void ShowInfo()
         {
@@ -92,8 +96,8 @@ namespace ConsoleApp1.Models
         public void ShowInfo();
 
     }
-    
 
+   
 
 
 }
