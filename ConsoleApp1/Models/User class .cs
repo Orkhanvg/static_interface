@@ -17,7 +17,11 @@ namespace ConsoleApp1.Models
         public string Email { get; set; }
         private string _password;
 
-       
+        public Class1(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
 
         public string Password
         {
