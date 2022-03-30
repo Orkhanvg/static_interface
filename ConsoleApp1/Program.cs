@@ -1,31 +1,34 @@
-﻿using System;
-using ConsoleApp1.Models;
+﻿using ConsoleApp1.Models;
+using System;
 
 namespace ConsoleApp1
 {
     class Program
     {
         static void Main(string[] args)
+
         {
-            Class1 class=new Class1();
-            
-            
-            Console.Write("Please enter the ID:             ");
-            class.d = Console.ReadLine();
+            do
+            {
+                Console.Write("Please enter the Fullname:             ");
+                string fullname = Console.ReadLine();
 
-            Console.Write("Please enter the Fullname:             ");
-            string Fullname = Console.ReadLine();
+                Console.Write("Please enter the Email:             ");
+                string email = Console.ReadLine();
 
-            Console.Write("Please enter the Email:             ");
-            string Email = Console.ReadLine();
+                Console.Write("Please enter the Password:             ");
+                string password = Console.ReadLine();
 
-            Console.Write("Please enter the Password:             ");
-            string Password = Console.ReadLine();
+                Class1 user = new Class1(email, password);
+                user.Fullname = fullname;
 
+                user.ShowInfo();
+            } while (Console.ReadKey().Key != ConsoleKey.Enter);
 
-           
-            
 
         }
+
+
     }
 }
+

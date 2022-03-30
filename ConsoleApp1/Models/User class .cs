@@ -15,6 +15,13 @@ namespace ConsoleApp1.Models
         public string Fullname { get; set; }
         public string Email { get; set; }
         private string _password;
+
+        public Class1(string email, string password)
+        {
+            Email = email;
+            Password = password;
+        }
+
         public string Password
         {
             get { return _password; }
@@ -42,7 +49,7 @@ namespace ConsoleApp1.Models
 
         public void ShowInfo()
         {
-            Console.WriteLine($"ID: {ID}\n" +
+            Console.WriteLine($"ID: {ID }\n" +
                 $"fullname: {Fullname}\n" +
                 $"Email: {Email}");
 
@@ -85,5 +92,8 @@ namespace ConsoleApp1.Models
         public void ShowInfo();
 
     }
+    
+
+
 
 }
